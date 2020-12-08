@@ -16,10 +16,13 @@ public class Tester {
       }
     }
     System.out.println();
-    r.next();
+    //r.next();
 
     int[]nums = {1,3,5,0,-1,3,9};
     IntegerSequence a2 = new ArraySequence(nums);
+    System.out.println("\nlength()\n");
+    print(a2.length(), 7);
+    
   }
 
   public static void print (Object actual, Object expected) {

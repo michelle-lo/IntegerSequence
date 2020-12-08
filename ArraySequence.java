@@ -6,15 +6,14 @@ public class ArraySequence implements IntegerSequence{
   /*Construct the sequence by copying values from the other array into the data array*/
   public ArraySequence(int [] other){
     data = other;
-
   }
 
   public void reset(){
-
+    currentIndex = data[0];
   }
 
   public int length(){
-    return 0;
+    return data.length;
   }
   public boolean hasNext(){
     return true;
