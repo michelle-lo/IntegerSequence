@@ -9,6 +9,19 @@ public class ArraySequence implements IntegerSequence{
     currentIndex = 0;
   }
 
+  //Postcondition: The otherseq will be reset.
+  //This constructor will copy ALL values of the `otherseq` into the data array.
+  public ArraySequence(IntegerSequence otherseq){
+    int[] arr = new int[otherseq.length()];
+    int i = 0;
+    while (otherseq.hasNext()) {
+      arr[i] = otherseq.next();
+      i++;
+    }
+    data = arr;
+    otherseq.reset();
+  }
+
   public void reset(){
     currentIndex = 0;
   }
@@ -25,7 +38,7 @@ public class ArraySequence implements IntegerSequence{
     if (!hasNext()) {
       throw new NoSuchElementException("No more elements left");
     }
-    
+
     int tempCurrent = data[currentIndex];
     currentIndex++;
     return tempCurrent;

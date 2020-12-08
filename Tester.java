@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 public class Tester {
   public static void main (String[] args) {
     IntegerSequence a1 = new Range(0, 5);
@@ -16,7 +17,11 @@ public class Tester {
       }
     }
     System.out.println();
-    //r.next();
+    try{
+      r.next();
+    } catch (NoSuchElementException e) {
+      System.out.println("no such element");
+    }
 
     int[]nums = {1,3,5,0,-1,3,9};
     IntegerSequence as = new ArraySequence(nums);
@@ -27,6 +32,15 @@ public class Tester {
     while(as.hasNext()){
       System.out.print(as.next()+", ");
     }
+
+    IntegerSequence b1 = new Range(10,20);
+    IntegerSequence as1 = new ArraySequence(b1);
+
+    System.out.println("ArraySequence(seq):");
+    while(as1.hasNext()) {
+      System.out.print(as1.next()+", ");
+    }
+    System.out.println();
 
   }
 
