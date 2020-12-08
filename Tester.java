@@ -6,7 +6,7 @@ public class Tester {
     System.out.println("next()\n");
     print(a1.next(), 0);
     print(a1.next(), 1);
-    
+
 
     IntegerSequence r = new Range(10,15);
     while(r.hasNext()){
@@ -16,6 +16,7 @@ public class Tester {
       }
     }
     System.out.println();
+    r.next();
   }
 
   public static void print (Object actual, Object expected) {
