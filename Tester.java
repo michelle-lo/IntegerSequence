@@ -19,10 +19,15 @@ public class Tester {
     //r.next();
 
     int[]nums = {1,3,5,0,-1,3,9};
-    IntegerSequence a2 = new ArraySequence(nums);
+    IntegerSequence as = new ArraySequence(nums);
     System.out.println("\nlength()\n");
-    print(a2.length(), 7);
-    
+    print(as.length(), 7);
+
+    System.out.println("ArraySequence(array):");
+    while(as.hasNext()){
+      System.out.print(as.next()+", ");
+    }
+
   }
 
   public static void print (Object actual, Object expected) {
