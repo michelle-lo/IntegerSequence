@@ -1,8 +1,21 @@
 public class Tester {
   public static void main (String[] args) {
-    Range a1 = new Range(0, 5);
+    IntegerSequence a1 = new Range(0, 5);
     System.out.println("\nlength()\n");
     print(a1.length(), 6);
+    System.out.println("next()\n");
+    print(a1.next(), 0);
+    print(a1.next(), 1);
+    
+
+    IntegerSequence r = new Range(10,15);
+    while(r.hasNext()){
+      System.out.print(r.next());
+      if( r.hasNext() ){
+        System.out.print( ", " );
+      }
+    }
+    System.out.println();
   }
 
   public static void print (Object actual, Object expected) {

@@ -6,6 +6,7 @@ public class Range implements IntegerSequence{
   public Range(int start,  int end){
     this.start = start;
     this.end = end;
+    current = start;
   }
 
   public void reset(){
@@ -16,12 +17,14 @@ public class Range implements IntegerSequence{
     return this.end - this.start + 1;
   }
   public boolean hasNext(){
-    return true;
+    return current <= this.end;
   }
 
   //@throws NoSuchElementException
   public int next(){
-    return 0;
+    int currentValue = current;
+    current++;
+    return currentValue;
   }
 
 }
